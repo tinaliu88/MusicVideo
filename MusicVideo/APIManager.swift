@@ -17,17 +17,33 @@ class APIManager {
         //configuration for not caching NSURLSession data, we don't want to cache it
         let config = NSURLSessionConfiguration.ephemeralSessionConfiguration()
         
-        //create nsurl session and task to load the data
+        //create nsurl session and task to retrieve the data
         let session = NSURLSession(configuration: config)
         let task = session.dataTaskWithURL(url) { (data, response, error) in
-            dispatch_async(dispatch_get_main_queue(), {
-                if error != nil {
+            if error != nil {
+                //UI update on the main quene
+                dispatch_async(dispatch_get_main_queue(), {
                     completion(result: error!.localizedDescription)
-                } else {
-                    completion(result: "NSURLSession successful!")
-                    print(data)
+                })
+            } else {
+                do {
+                    if let jsonData = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as? [String: AnyObject] {
+                        print(jsonData)
+                        
+                        //high priority queue
+                        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), {
+                            //dispatch the update back to the main queue
+                            dispatch_async(dispatch_get_main_queue(), {
+                                completion(result: "NSJSONSerialization successful")
+                            })
+                        })
+                    }
+                } catch {
+                    dispatch_async(dispatch_get_main_queue(), {
+                        completion(result: "Error is NSJSONSerialization")
+                    })
                 }
-            })
+            }
         }
         
         //start the task
