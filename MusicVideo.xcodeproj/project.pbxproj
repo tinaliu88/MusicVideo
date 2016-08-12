@@ -14,6 +14,7 @@
 		8336A7C71D5A05B100EEE1A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8336A7C51D5A05B100EEE1A8 /* LaunchScreen.storyboard */; };
 		8336A7D21D5A05B100EEE1A8 /* MusicVideoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8336A7D11D5A05B100EEE1A8 /* MusicVideoTests.swift */; };
 		8336A7DD1D5A05B100EEE1A8 /* MusicVideoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8336A7DC1D5A05B100EEE1A8 /* MusicVideoUITests.swift */; };
+		834DA4D51D5D86D30022CCC5 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834DA4D41D5D86D30022CCC5 /* APIManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		8336A7D81D5A05B100EEE1A8 /* MusicVideoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicVideoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8336A7DC1D5A05B100EEE1A8 /* MusicVideoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicVideoUITests.swift; sourceTree = "<group>"; };
 		8336A7DE1D5A05B100EEE1A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		834DA4D41D5D86D30022CCC5 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +99,10 @@
 		8336A7BB1D5A05B100EEE1A8 /* MusicVideo */ = {
 			isa = PBXGroup;
 			children = (
+				834DA4D11D5D86550022CCC5 /* Model */,
+				834DA4D21D5D865D0022CCC5 /* View */,
+				834DA4D31D5D86620022CCC5 /* Controller */,
 				8336A7BC1D5A05B100EEE1A8 /* AppDelegate.swift */,
-				8336A7BE1D5A05B100EEE1A8 /* ViewController.swift */,
 				8336A7C01D5A05B100EEE1A8 /* Main.storyboard */,
 				8336A7C31D5A05B100EEE1A8 /* Assets.xcassets */,
 				8336A7C51D5A05B100EEE1A8 /* LaunchScreen.storyboard */,
@@ -123,6 +127,29 @@
 				8336A7DE1D5A05B100EEE1A8 /* Info.plist */,
 			);
 			path = MusicVideoUITests;
+			sourceTree = "<group>";
+		};
+		834DA4D11D5D86550022CCC5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				834DA4D41D5D86D30022CCC5 /* APIManager.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		834DA4D21D5D865D0022CCC5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		834DA4D31D5D86620022CCC5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8336A7BE1D5A05B100EEE1A8 /* ViewController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				834DA4D51D5D86D30022CCC5 /* APIManager.swift in Sources */,
 				8336A7BF1D5A05B100EEE1A8 /* ViewController.swift in Sources */,
 				8336A7BD1D5A05B100EEE1A8 /* AppDelegate.swift in Sources */,
 			);
@@ -484,6 +512,7 @@
 				8336A7E31D5A05B100EEE1A8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8336A7E41D5A05B100EEE1A8 /* Build configuration list for PBXNativeTarget "MusicVideoTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +521,7 @@
 				8336A7E61D5A05B100EEE1A8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8336A7E71D5A05B100EEE1A8 /* Build configuration list for PBXNativeTarget "MusicVideoUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +530,7 @@
 				8336A7E91D5A05B100EEE1A8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
